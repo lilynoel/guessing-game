@@ -4,13 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+
     <!-- use ./ before javascript/index.js = "relative paths" : will work in more places -->
     <!-- defer included so that javascript runs after the DOM has loaded. -->
     <script src="./javascript/index.js" defer></script>
-    <title>Document</title>
+
+    <!-- import styling from css sheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Guessing Game</title>
 </head>
 <body>
     
+    <div class="header">
+    <h1>Guessing Game</h1>
+    </div>
+
     <form>
         <label for="guess">Guess:</label><br>
         <input id="guess" type="number"/>
