@@ -4,6 +4,7 @@ import {
   createWinMessage,
   createLoseMessage,
   createOtherMessage,
+  clearMessageBox,
 } from "./dom-functions.js";
 
 // constant variables linking to buttons in HTML page
@@ -22,6 +23,7 @@ console.log(randomNumber);
 // event for submit button
 submitButton.addEventListener("click", (event) => {
   event.preventDefault();
+  clearMessageBox();
 
   console.log("You clicked the submit button");
 

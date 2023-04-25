@@ -27,11 +27,17 @@ export function createLoseMessage() {
   element.appendChild(para);
 }
 
-// functionality to add something when the guess is incorrect 
+// functionality to add something when the guess is incorrect
 export function createOtherMessage() {
   const para = document.createElement("p");
   const node = document.createTextNode("incorrect guess!");
   para.appendChild(node);
   const element = document.getElementById("message");
   element.appendChild(para);
+}
+
+export function clearMessageBox() {
+  // empty out an element
+  const element = document.getElementById("message");
+  element.textContent = "";
 }
