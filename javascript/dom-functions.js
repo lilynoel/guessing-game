@@ -21,7 +21,7 @@ export function createWinMessage() {
 // functionality to add something when you lose
 export function createLoseMessage() {
   const para = document.createElement("p");
-  const node = document.createTextNode("This is a lose message :-|");
+  const node = document.createTextNode("Game Over!");
   para.appendChild(node);
   const element = document.getElementById("message");
   element.appendChild(para);
