@@ -1,14 +1,17 @@
+import { generateRandomNumber } from "./utility-functions.js";
+import {
+  endGame,
+  createWinMessage,
+  createLoseMessage,
+  createOtherMessage,
+} from "./dom-functions.js";
+
 // constant variables linking to buttons in HTML page
-const submitButton = document.getElementById("submitButton");
-const resetButton = document.getElementById("resetButton");
+export const submitButton = document.getElementById("submitButton");
+export const resetButton = document.getElementById("resetButton");
 
 // variable to store number of guesses
 let guesses = 0;
-
-// function to generate a random number
-function generateRandomNumber(min, max) {
-  return Math.floor(Math.random() * max + min);
-}
 
 // variable to hold random number generator with chosen parameters
 let randomNumber = generateRandomNumber(1, 20);
@@ -31,17 +34,16 @@ submitButton.addEventListener("click", (event) => {
   if (userGuess == randomNumber) {
     // check if guess is correct
     // if correct, end game and display win message
-    console.log("That's Correct! :-D");
-    submitButton.disabled = true;
+    createWinMessage();
+    endGame();
 
     // if not correct, check if number of guesses is > 3
   } else if (guesses > 3) {
     // if number of guesses is > 3: end game & display lose message
-    submitButton.disabled = true;
-    console.log("Game Over!");
-
+    createLoseMessage();
+    endGame();
   } else {
-    console.log("Not Correct! :-(");
+    createOtherMessage();
   }
 });
 
