@@ -25,6 +25,3 @@ export function clearMessageBox() {
   const element = document.getElementById("message");
   element.textContent = "";
 }
-
-
-

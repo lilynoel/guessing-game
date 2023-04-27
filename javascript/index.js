@@ -38,12 +38,16 @@ submitButton.addEventListener("click", (event) => {
     endGame();
 
     // if not correct, check if number of guesses is > 3
-  } else if (guesses > 3) {
+  } else if (guesses >= 3) {
     // if number of guesses is > 3: end game & display lose message
-    createMessageNode("You did not win");
+    createMessageNode("You did not win.");
     endGame();
   } else {
-    createMessageNode("incorrect guess");
+    let hint =
+      userGuess > randomNumber
+        ? "Your guess was too high!"
+        : "Your guess was too low!";
+    createMessageNode(`${hint} Remaining guesses: ${3 - guesses}`);
   }
 });
 
@@ -51,3 +55,14 @@ submitButton.addEventListener("click", (event) => {
 resetButton.addEventListener("click", () => {
   console.log("You clicked the reset button");
 });
+
+// check if userGuess > randomNumber
+
+// if userGuess is greater than randomNumber,
+// display a message 'your guess was too high!'
+
+// if the userGuess is less than randomNumber,
+// display a different message 'your guess was too low!'
+
+// store message in a variable, so we can add it to the end
+// of remaining guesses message.
