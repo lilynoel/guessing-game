@@ -1,10 +1,8 @@
 import { generateRandomNumber } from "./utility-functions.js";
 import {
   endGame,
-  createWinMessage,
-  createLoseMessage,
-  createOtherMessage,
   clearMessageBox,
+  createMessageNode,
 } from "./dom-functions.js";
 
 // constant variables linking to buttons in HTML page
@@ -36,16 +34,16 @@ submitButton.addEventListener("click", (event) => {
   if (userGuess == randomNumber) {
     // check if guess is correct
     // if correct, end game and display win message
-    createWinMessage();
+    createMessageNode("You won!");
     endGame();
 
     // if not correct, check if number of guesses is > 3
   } else if (guesses > 3) {
     // if number of guesses is > 3: end game & display lose message
-    createLoseMessage();
+    createMessageNode("You did not win");
     endGame();
   } else {
-    createOtherMessage();
+    createMessageNode("incorrect guess");
   }
 });
 
