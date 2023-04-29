@@ -1,4 +1,4 @@
-import { submitButton } from "./index.js";
+import { submitButton, guessInput } from "./index.js";
 
 // function to end the game
 export function endGame() {
@@ -9,7 +9,6 @@ export function endGame() {
 //      use javascript to create a paragraph (maybe change later to a card).
 //      use javascript to add some text to this paragraph ie., "Sorry, Game Over!"
 //      use Javascript to add this paragraph to the message div.
-
 
 // Message Function
 export function createMessageNode(message) {
@@ -24,4 +23,5 @@ export function clearMessageBox() {
   // empty out an element
   const element = document.getElementById("message");
   element.textContent = "";
+  guessInput.value = "";
 }

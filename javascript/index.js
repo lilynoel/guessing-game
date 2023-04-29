@@ -8,7 +8,8 @@ import {
 // constant variables linking to buttons in HTML page
 export const submitButton = document.getElementById("submitButton");
 export const resetButton = document.getElementById("resetButton");
-
+export const guessInput = document.getElementById("guess")
+  
 // variable to store number of guesses
 let guesses = 0;
 
@@ -21,12 +22,13 @@ console.log(randomNumber);
 // event for submit button
 submitButton.addEventListener("click", (event) => {
   event.preventDefault();
-  clearMessageBox();
+  
 
   console.log("You clicked the submit button");
 
   // capture input somehow
-  let userGuess = document.getElementById("guess").value;
+  let userGuess = guessInput.value;
+  clearMessageBox();
 
   // increase number of guesses
   guesses++;
@@ -54,6 +56,17 @@ submitButton.addEventListener("click", (event) => {
 // event for reset button
 resetButton.addEventListener("click", () => {
   console.log("You clicked the reset button");
+  // clear message box
+  clearMessageBox();
+  // generate new random number
+  randomNumber = generateRandomNumber(1, 20);
+  // set guesses back to zero
+  guesses = 0;
+  console.log(randomNumber);
+  // message
+  createMessageNode(`Game is reset :-D Guesses remaining: ${3 + guesses}`);
+  // enable submit button
+  submitButton.disabled = false;
 });
 
 // check if userGuess > randomNumber
