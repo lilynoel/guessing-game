@@ -12,3 +12,19 @@
       color: white;
   }
 
+
+  .message-box {
+    border: 1px solid black;
+  }
+
+  .win-message {
+    color: green
+  }
+
+  .lose-message {
+    color: red
+  }
+
+  .info-message {
+    color: orange
+  }

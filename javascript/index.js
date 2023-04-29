@@ -36,13 +36,13 @@ submitButton.addEventListener("click", (event) => {
   if (userGuess == randomNumber) {
     // check if guess is correct
     // if correct, end game and display win message
-    createMessageNode("You won!");
+    createMessageNode("You won!", "win-message");
     endGame();
 
     // if not correct, check if number of guesses is > 3
   } else if (guesses >= 3) {
     // if number of guesses is > 3: end game & display lose message
-    createMessageNode("You did not win.");
+    createMessageNode(`Game Over. The number was: ${randomNumber}`, "lose-message");
     endGame();
   } else {
     let hint =

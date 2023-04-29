@@ -11,12 +11,15 @@ export function endGame() {
 //      use Javascript to add this paragraph to the message div.
 
 // Message Function
-export function createMessageNode(message) {
+export function createMessageNode(message, className = "info-message") {
   const para = document.createElement("p");
   const node = document.createTextNode(message);
   para.appendChild(node);
   const element = document.getElementById("message");
+  element.className = "";
   element.appendChild(para);
+  element.classList.add("message-box");
+  element.classList.add(className);
 }
 
 export function clearMessageBox() {
